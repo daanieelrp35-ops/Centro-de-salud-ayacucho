@@ -65,7 +65,412 @@
   <footer>
     <p>© 2026 Centro de Salud Ayacucho</p>
   </footer>
+:root {
+  --primary: #0b5d7a;
+  --primary-dark: #083f53;
+  --secondary: #1a9bbf;
+  --accent: #dff7ff;
+  --text: #1d2a2f;
+  --muted: #5f6d74;
+  --light: #f5fafc;
+  --white: #ffffff;
+  --shadow: 0 12px 30px rgba(11, 93, 122, 0.12);
+}
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s ease;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 70px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--white);
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+.btn-nav,
+.btn-primary,
+.btn-secondary {
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700;
+}
+
+.btn-nav,
+.btn-primary {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.btn-nav:hover,
+.btn-primary:hover {
+  background: #1487a5;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  padding: 80px 70px;
+  background: linear-gradient(135deg, #eafaff, #f9fdff);
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin: 10px 0 20px;
+  color: var(--primary-dark);
+}
+
+.hero-text p {
+  font-size: 1.07rem;
+  color: var(--muted);
+  max-width: 600px;
+}
+
+.badge {
+  display: inline-block;
+  background: #d8f3ff;
+  color: var(--primary);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  gap: 26px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.stats div {
+  padding: 16px 18px;
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  min-width: 120px;
+}
+
+.stats strong {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.stats span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hero-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 30px 26px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card h3 {
+  margin-top: 0;
+  font-size: 1.7rem;
+  color: var(--primary-dark);
+}
+
+.hero-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.hero-card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eaeaea;
+  color: var(--muted);
+}
+
+.hero-card li:last-child {
+  border-bottom: none;
+}
+
+.hero-card strong {
+  color: var(--text);
+}
+
+.mini-card {
+  background: linear-gradient(135deg, var(--accent), #ebf9ff);
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.services,
+.news {
+  padding: 70px 70px 30px;
+}
+
+.about {
+  padding: 35px 70px 70px;
+}
+
+.section-title {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.section-title h2,
+.about-text h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--primary-dark);
+}
+
+.grid,
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 22px;
+}
+
+.service-card,
+.news-card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 26px 22px;
+  box-shadow: var(--shadow);
+}
+
+.icon {
+  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.service-card h3,
+.news-card h3 {
+  margin: 0 0 10px;
+  color: var(--primary-dark);
+}
+
+.service-card p,
+.news-card p,
+.about-text p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+
+.about-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 18px;
+}
+
+.box {
+  background: linear-gradient(135deg, var(--accent), #f1fbff);
+  border-radius: 16px;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.box strong {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--primary-dark);
+}
+
+.box span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 30px 70px 20px;
+  margin-top: 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+
+.footer-content p {
+  margin: 6px 0;
+  color: rgba(255,255,255,0.9);
+}
+
+.copy {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+}
+
+@media (max-width: 900px) {
+  .topbar,
+  .hero,
+  .services,
+  .about,
+  .news,
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .hero,
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .grid,
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .grid,
+  .news-grid,
+  .about-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn-nav,
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
   <script src="datos.js"></script>
 </body>
 </html>
